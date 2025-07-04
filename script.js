@@ -8,54 +8,6 @@ const games = [
         icon: "numberle-logo.svg",
         page: "numberle-game.html",
         isLogo: true
-    },
-    {
-        id: 2,
-        title: "Space Adventure",
-        description: "Explore the vast universe in this exciting space exploration game. Navigate through asteroid fields and discover new planets.",
-        category: "Adventure",
-        icon: "🚀",
-        page: "space-adventure.html"
-    },
-    {
-        id: 3,
-        title: "Puzzle Master",
-        description: "Challenge your mind with hundreds of brain-teasing puzzles. Perfect for sharpening your problem-solving skills.",
-        category: "Puzzle",
-        icon: "🧩",
-        page: "puzzle-master.html"
-    },
-    {
-        id: 4,
-        title: "Racing Legends",
-        description: "Experience high-speed racing action with stunning graphics and realistic physics. Compete against the best drivers.",
-        category: "Racing",
-        icon: "🏎️",
-        page: "racing-legends.html"
-    },
-    {
-        id: 5,
-        title: "Fantasy Quest",
-        description: "Embark on an epic journey through magical realms. Battle monsters, collect treasures, and become a legendary hero.",
-        category: "RPG",
-        icon: "⚔️",
-        page: "fantasy-quest.html"
-    },
-    {
-        id: 6,
-        title: "Sports Champion",
-        description: "Compete in various sports disciplines and become the ultimate champion. Features realistic gameplay and multiplayer modes.",
-        category: "Sports",
-        icon: "🏆",
-        page: "sports-champion.html"
-    },
-    {
-        id: 7,
-        title: "Strategy Empire",
-        description: "Build your empire from scratch and conquer new territories. Manage resources and lead your armies to victory.",
-        category: "Strategy",
-        icon: "🏰",
-        page: "strategy-empire.html"
     }
 ];
 
