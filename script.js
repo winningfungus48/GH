@@ -70,6 +70,8 @@ function createGameCard(game) {
         ? `<img src="${game.icon}" alt="${game.title} logo" class="game-card-logo">`
         : game.icon;
     
+    console.log('Creating card for', game.title, 'with icon:', iconContent);
+    
     card.innerHTML = `
         <div class="game-card-image">
             ${iconContent}
@@ -88,11 +90,16 @@ function createGameCard(game) {
 // Function to render all game cards
 function renderGames() {
     const gamesContainer = document.getElementById('gamesContainer');
-    if (!gamesContainer) return;
+    if (!gamesContainer) {
+        console.log('Games container not found');
+        return;
+    }
     
+    console.log('Rendering games:', games);
     gamesContainer.innerHTML = '';
     
     games.forEach(game => {
+        console.log('Creating card for:', game.title);
         const card = createGameCard(game);
         gamesContainer.appendChild(card);
     });

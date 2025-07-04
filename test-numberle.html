@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Numberle Integration</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .test-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .test-card {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            margin: 20px 0;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .test-card-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            font-weight: 700;
+        }
+        .game-card-logo {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>Numberle Integration Test</h1>
+        
+        <h2>Test 1: Numberle Card with Logo</h2>
+        <a href="numberle-game.html" class="test-card">
+            <div class="test-card-image">
+                <img src="numberle-logo.svg" alt="Numberle logo" class="game-card-logo">
+            </div>
+            <h3>Numberle</h3>
+            <p>Guess the 5-digit number in 6 tries. A challenging number puzzle game that tests your logic and deduction skills.</p>
+            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.875rem; color: #a0aec0;">
+                <span style="background: #edf2f7; color: #4a5568; padding: 0.25rem 0.75rem; border-radius: 20px; font-weight: 500;">Puzzle</span>
+                <span>Click to play →</span>
+            </div>
+        </a>
+        
+        <h2>Test 2: Regular Card with Emoji</h2>
+        <a href="space-adventure.html" class="test-card">
+            <div class="test-card-image">
+                🚀
+            </div>
+            <h3>Space Adventure</h3>
+            <p>Explore the vast universe in this exciting space exploration game. Navigate through asteroid fields and discover new planets.</p>
+            <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.875rem; color: #a0aec0;">
+                <span style="background: #edf2f7; color: #4a5568; padding: 0.25rem 0.75rem; border-radius: 20px; font-weight: 500;">Adventure</span>
+                <span>Click to play →</span>
+            </div>
+        </a>
+        
+        <h2>Test 3: Check Files</h2>
+        <ul>
+            <li>numberle-logo.svg: <span id="logo-status">Checking...</span></li>
+            <li>numberle-game.html: <span id="game-status">Checking...</span></li>
+            <li>script.js updated: <span id="script-status">Checking...</span></li>
+        </ul>
+        
+        <p><a href="index.html">← Back to Game Hub</a></p>
+    </div>
+
+    <script>
+        // Test if files exist
+        fetch('numberle-logo.svg')
+            .then(response => {
+                document.getElementById('logo-status').textContent = response.ok ? '✅ Found' : '❌ Missing';
+            })
+            .catch(() => {
+                document.getElementById('logo-status').textContent = '❌ Error loading';
+            });
+            
+        fetch('numberle-game.html')
+            .then(response => {
+                document.getElementById('game-status').textContent = response.ok ? '✅ Found' : '❌ Missing';
+            })
+            .catch(() => {
+                document.getElementById('game-status').textContent = '❌ Error loading';
+            });
+            
+        fetch('script.js')
+            .then(response => response.text())
+            .then(text => {
+                const hasNumberle = text.includes('Numberle') && text.includes('numberle-logo.svg');
+                document.getElementById('script-status').textContent = hasNumberle ? '✅ Updated' : '❌ Not updated';
+            })
+            .catch(() => {
+                document.getElementById('script-status').textContent = '❌ Error loading';
+            });
+    </script>
+</body>
+</html> 
