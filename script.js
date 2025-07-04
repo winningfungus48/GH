@@ -2,6 +2,15 @@
 const games = [
     {
         id: 1,
+        title: "Numberle",
+        description: "Guess the 5-digit number in 6 tries. A challenging number puzzle game that tests your logic and deduction skills.",
+        category: "Puzzle",
+        icon: "numberle-logo.svg",
+        page: "numberle-game.html",
+        isLogo: true
+    },
+    {
+        id: 2,
         title: "Space Adventure",
         description: "Explore the vast universe in this exciting space exploration game. Navigate through asteroid fields and discover new planets.",
         category: "Adventure",
@@ -9,7 +18,7 @@ const games = [
         page: "space-adventure.html"
     },
     {
-        id: 2,
+        id: 3,
         title: "Puzzle Master",
         description: "Challenge your mind with hundreds of brain-teasing puzzles. Perfect for sharpening your problem-solving skills.",
         category: "Puzzle",
@@ -17,7 +26,7 @@ const games = [
         page: "puzzle-master.html"
     },
     {
-        id: 3,
+        id: 4,
         title: "Racing Legends",
         description: "Experience high-speed racing action with stunning graphics and realistic physics. Compete against the best drivers.",
         category: "Racing",
@@ -25,7 +34,7 @@ const games = [
         page: "racing-legends.html"
     },
     {
-        id: 4,
+        id: 5,
         title: "Fantasy Quest",
         description: "Embark on an epic journey through magical realms. Battle monsters, collect treasures, and become a legendary hero.",
         category: "RPG",
@@ -33,7 +42,7 @@ const games = [
         page: "fantasy-quest.html"
     },
     {
-        id: 5,
+        id: 6,
         title: "Sports Champion",
         description: "Compete in various sports disciplines and become the ultimate champion. Features realistic gameplay and multiplayer modes.",
         category: "Sports",
@@ -41,7 +50,7 @@ const games = [
         page: "sports-champion.html"
     },
     {
-        id: 6,
+        id: 7,
         title: "Strategy Empire",
         description: "Build your empire from scratch and conquer new territories. Manage resources and lead your armies to victory.",
         category: "Strategy",
@@ -56,9 +65,14 @@ function createGameCard(game) {
     card.href = game.page;
     card.className = 'game-card';
     
+    // Handle Numberle logo specially
+    const iconContent = game.isLogo 
+        ? `<img src="${game.icon}" alt="${game.title} logo" class="game-card-logo">`
+        : game.icon;
+    
     card.innerHTML = `
         <div class="game-card-image">
-            ${game.icon}
+            ${iconContent}
         </div>
         <h3 class="game-card-title">${game.title}</h3>
         <p class="game-card-description">${game.description}</p>

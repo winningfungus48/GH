@@ -16,13 +16,19 @@ A modern, responsive HTML/CSS/JavaScript project featuring a clean game hub home
 
 ```
 Game Hub/
-├── index.html          # Main homepage
-├── about.html          # About page
-├── contact.html        # Contact page
-├── space-adventure.html # Sample game page
-├── styles.css          # Main stylesheet
-├── script.js           # JavaScript functionality
-└── README.md           # This file
+├── index.html              # Main homepage
+├── about.html              # About page
+├── contact.html            # Contact page
+├── space-adventure.html    # Sample game page
+├── numberle-game.html      # Numberle game integration
+├── numberle.html           # Original Numberle game
+├── numberle-styles.css     # Numberle game styles
+├── numberle-script.js      # Numberle game logic
+├── numberle-logo.svg       # Numberle logo
+├── numberle-README.md      # Numberle documentation
+├── styles.css              # Main stylesheet
+├── script.js               # JavaScript functionality
+└── README.md               # This file
 ```
 
 ## 🚀 Getting Started
@@ -35,6 +41,7 @@ Game Hub/
 
 ### Homepage (`index.html`)
 - View featured games in the responsive grid layout
+- **Numberle** is featured as the first game with its custom logo
 - Click on any game card to navigate to its dedicated page
 - Use the navigation menu to access About and Contact pages
 
@@ -49,7 +56,8 @@ Game Hub/
 - **Contact**: Send messages through the contact form
 
 ### Individual Game Pages
-- Detailed game information and features
+- **Numberle Game**: Fully playable number guessing game integrated into Game Hub
+- Other games: Detailed game information and features
 - Play and demo buttons (currently show alerts)
 - Game statistics and metadata
 - Responsive design for all screen sizes
@@ -82,8 +90,9 @@ Game Hub/
    - `title`: Game name
    - `description`: Game description
    - `category`: Game genre
-   - `icon`: Emoji or icon
+   - `icon`: Emoji or icon (or SVG file path for logos)
    - `page`: HTML file name
+   - `isLogo`: Set to `true` if using an SVG logo instead of emoji
 
 ### Creating New Game Pages
 1. Copy `space-adventure.html` as a template
