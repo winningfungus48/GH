@@ -6,27 +6,20 @@ const games = [
         description: "Guess the 5-digit number in 6 tries. A challenging number puzzle game that tests your logic and deduction skills.",
         category: "Puzzle",
         icon: "numberle-logo.svg",
-        page: "numberle-game.html",
+        page: "games/numberle/index.html",
         isLogo: true
     }
 ];
 
-// Function to create a game card element
+// Function to create a game card element as a simple anchor
 function createGameCard(game) {
     const card = document.createElement('a');
     card.href = game.page;
     card.className = 'game-card';
-    
-    // Handle Numberle logo specially
-    const iconContent = game.isLogo 
-        ? `<img src="${game.icon}" alt="${game.title} logo" class="game-card-logo">`
-        : game.icon;
-    
-    console.log('Creating card for', game.title, 'with icon:', iconContent);
-    
+    card.style.display = 'block';
     card.innerHTML = `
         <div class="game-card-image">
-            ${iconContent}
+            <img src="${game.icon}" alt="${game.title} logo" class="game-card-logo">
         </div>
         <h3 class="game-card-title">${game.title}</h3>
         <p class="game-card-description">${game.description}</p>
@@ -35,23 +28,15 @@ function createGameCard(game) {
             <span>Click to play →</span>
         </div>
     `;
-    
     return card;
 }
 
 // Function to render all game cards
 function renderGames() {
     const gamesContainer = document.getElementById('gamesContainer');
-    if (!gamesContainer) {
-        console.log('Games container not found');
-        return;
-    }
-    
-    console.log('Rendering games:', games);
+    if (!gamesContainer) return;
     gamesContainer.innerHTML = '';
-    
     games.forEach(game => {
-        console.log('Creating card for:', game.title);
         const card = createGameCard(game);
         gamesContainer.appendChild(card);
     });
@@ -61,7 +46,6 @@ function renderGames() {
 function highlightCurrentPage() {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const navLinks = document.querySelectorAll('.nav-link');
-    
     navLinks.forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href') === currentPage) {
