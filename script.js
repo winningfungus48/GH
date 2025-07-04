@@ -6,7 +6,7 @@ const games = [
         description: "Guess the 5-digit number in 6 tries. A challenging number puzzle game that tests your logic and deduction skills.",
         category: "Puzzle",
         icon: "numberle-logo.svg",
-        page: "games/numberle/index.html",
+        page: "numberle-game.html",
         isLogo: true
     }
 ];
